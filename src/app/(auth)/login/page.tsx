@@ -68,7 +68,10 @@ export default function LoginPage() {
             Continue with Google
           </button>
 
-          <Link href="/" className="font-base text-[#299D91] font-semibold">
+          <Link
+            href="/signup"
+            className="font-base text-[#299D91] font-semibold"
+          >
             Create an account
           </Link>
         </div>
