@@ -28,7 +28,7 @@ export default function LoginPage() {
         <label htmlFor="password" className="w-full flex flex-col gap-y-2 ">
           <span className="flex flex-start justify-between text-[#191D23] font-sm font-medium">
             Password
-            <Link href="/" className="font-base text-[#299D91]">
+            <Link href="/forget-password" className="font-base text-[#299D91]">
               Forgot Password?
             </Link>
           </span>
