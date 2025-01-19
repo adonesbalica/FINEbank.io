@@ -1,7 +1,12 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import ForgetPasswordContainer from './container'
 
 export default function ForgetPasswordPage() {
+  const { handleSubmit, onSubmit, register, errors } = ForgetPasswordContainer()
+
   return (
     <div className="flex flex-col items-center justify-center h-svh">
       <Image
@@ -22,17 +27,24 @@ export default function ForgetPasswordPage() {
         </span>
       </div>
 
-      <form action="" className="w-[400px]">
+      <form onSubmit={handleSubmit(onSubmit)} className="w-[400px]">
         <label htmlFor="email" className="w-full flex flex-col gap-y-2 mb-6">
           <span className="flex-start text-[#191D23] font-sm font-medium">
             Email Address
           </span>
           <input
+            {...register('email')}
             type="email"
             id="email"
             placeholder="example@gmail.com"
-            className="outline-none border border-[#D0D5DD] px-3 py-2 rounded-lg text-base focus:border-[#4B5768]"
+            className={`outline-none border border-[#D0D5DD] px-3 py-2 rounded-lg text-base focus:border-[#4B5768] ${
+              errors.email && 'focus:border-red-700 border-red-700'
+            }
+            `}
           />
+          {errors.email && (
+            <p className="text-red-700 text-sm">{errors.email.message}</p>
+          )}
         </label>
 
         <div className="flex flex-col items-center mt-8 gap-y-4 mb-6">

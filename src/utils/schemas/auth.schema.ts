@@ -16,3 +16,7 @@ export const SignUpSchema = z.object({
     message: 'Password must be at least 6 characters long',
   }),
 })
+
+export const ForgetPasswordSchema = z.object({
+  email: z.string().email({ message: 'Please enter a valid email address' }),
+})
