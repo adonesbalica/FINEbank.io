@@ -4,6 +4,7 @@ import Link from 'next/link'
 import {
   ArrowRightLeft,
   CirclePlus,
+  EllipsisVertical,
   LayoutDashboard,
   LogOut,
   Receipt,
@@ -137,7 +138,24 @@ export const Sidebar = () => {
           Logout
         </Link>
         <div className="mt-11 mb-8 flex-grow border-t border-[#cacdd3]"></div>
-        <div>oi</div>
+        <div className="flex items-center">
+          <Image
+            src="/profile-pic.svg"
+            alt="profile pic"
+            width={32}
+            height={32}
+            className="mr-4"
+          />
+          <div className="flex flex-col justify-center mr-8">
+            <p className="font-semibold text-base text-white">Tanzir Rahman</p>
+            <Link href="/" className="text-[#cacdd3] text-xs">
+              View profile
+            </Link>
+          </div>
+          <Link href="/">
+            <EllipsisVertical stroke="white" />
+          </Link>
+        </div>
       </div>
     </div>
   )
